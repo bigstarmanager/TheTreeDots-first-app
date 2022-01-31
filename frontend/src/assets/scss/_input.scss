@@ -1,0 +1,101 @@
+.custom-input {
+  background: #fafbfc !important;
+
+  & .q-field__control {
+    height: 30px;
+    min-height: 30px !important;
+    & .q-field__control-container .q-field__native {
+      padding: 3px 0px;
+      min-height: 30px !important;
+    }
+    & .q-field__append.q-field__marginal {
+      height: 30px !important;
+    }
+    ::before {
+      border-style: outset !important;
+    }
+  }
+}
+
+.card-input,
+.custom-input {
+  background: #fafbfc !important;
+  & .q-field__control {
+    &::before {
+      border: 1px solid rgb(212, 212, 212) !important;
+      border-style: outset !important;
+    }
+
+    & .q-field__control-container .q-field__native {
+      font-size: 12px;
+    }
+  }
+  & .q-field__control.text-negative,
+  & .q-field__bottom {
+    color: #cb6363 !important;
+  }
+  &.q-field--error .q-icon {
+    visibility: hidden;
+  }
+}
+
+.custom-input {
+  & .q-mx-md {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+.custom-input .q-field__control {
+  height: 40px;
+  min-height: 40px !important;
+}
+
+.custom-input .q-field__control::before {
+  border: 1px solid rgba(0, 0, 0, 0.24) !important;
+}
+
+.custom-input {
+  & .q-field__append.q-field__marginal.row.no-wrap.items-center {
+    height: auto !important;
+  }
+}
+.custom-input {
+  & .q-field__append.q-field__marginal.row.no-wrap.items-center.q-anchor--skip {
+    height: auto !important;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.screen-width-max-1366-off {
+  display: none;
+}
+
+.screen-width-1366-range-time {
+  width: 17vw;
+}
+
+@media (max-width: 1366px) {
+  .screen-width-max-1366-active {
+    display: none !important;
+  }
+
+  .screen-width-max-1366-off {
+    display: block;
+  }
+
+  .screen-width-1366-select-search {
+    height: 145px;
+  }
+
+  .screen-width-1366-range-time {
+    width: 20vw;
+  }
+
+  .text-selected {
+    margin: 26px 65px 0 0 !important;
+  }
+}

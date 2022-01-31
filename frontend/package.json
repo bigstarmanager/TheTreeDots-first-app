@@ -1,0 +1,51 @@
+{
+  "name": "@treedots/3pl-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "quasar dev",
+    "build": "quasar build quasar serve --history",
+    "lint": ""
+  },
+  "dependencies": {
+    "@googlemaps/js-api-loader": "^1.12.5",
+    "@quasar/extras": "^1.0.0",
+    "axios": "^0.21.1",
+    "core-js": "^3.6.5",
+    "quasar": "^1.0.0",
+    "vue-i18n": "^8.0.0",
+    "apollo-cache-inmemory": "^1.6.6",
+    "apollo-client": "^2.6.10",
+    "apollo-link": "^1.2.14",
+    "apollo-link-http": "^1.5.17",
+    "gmap-vue": "^1.5.0",
+    "graphql": "^15.5.1",
+    "graphql-tag": "^2.12.5",
+    "moment": "^2.29.1",
+    "point-in-polygon": "^1.1.0",
+    "vue-apollo": "^3.0.7",
+    "handlebars": "~4.7.7",
+    "puppeteer": "10.1.0"
+  },
+  "devDependencies": {
+    "@quasar/app": "^2.0.0",
+    "@quasar/quasar-app-extension-dotenv": "1.1.0"
+  },
+  "browserslist": [
+    "ie >= 11",
+    "last 10 Chrome versions",
+    "last 10 Firefox versions",
+    "last 4 Edge versions",
+    "last 7 Safari versions",
+    "last 8 Android versions",
+    "last 8 ChromeAndroid versions",
+    "last 8 FirefoxAndroid versions",
+    "last 10 iOS versions",
+    "last 5 Opera versions"
+  ],
+  "engines": {
+    "node": ">= 10.18.1",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  }
+}

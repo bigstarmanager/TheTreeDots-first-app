@@ -1,0 +1,18 @@
+config:
+  3pl-graphql:certificateArn: arn:aws:acm:ap-southeast-1:048162753991:certificate/37c63610-ba2c-4b2b-8a93-ecc52d82a163
+  3pl-graphql:coreStack: treedots/core/test
+  3pl-graphql:service:
+    environment:
+      DEBUG: '*'
+      ENV: testing
+      NODE_ENV: testing
+    secrets:
+      DATABASE_URL:
+        secure: AAABAMKgTdvXip4WDFp3DKu6RQJxRSQOVBJMMgrtBWU/g0W6nqJ5KCWWSmtpwGNCr8yEX2qhZZMl6AAuP42uJPkyPHx+cx90Nld9GwQ8sQr1VR9Nb6HzdFmG6WOngA19lZ0m8UtAAy9zvzovYTMu6sI=
+      JWT_SECRET:
+        secure: AAABAJooSsK2CtJliC+xCnID14ol5vEbtjicxoqw4xTnzFdEXrSxc3RAJslIXMm1
+  3pl-graphql:serviceAssignPublicIp: 'true'
+  3pl-graphql:serviceCpu: '1024'
+  3pl-graphql:serviceDesiredCount: '1'
+  3pl-graphql:serviceMemory: '2048'
+  aws:region: ap-southeast-1

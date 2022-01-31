@@ -1,0 +1,90 @@
+{
+  "name": "@treedots/3pl-graphql",
+  "version": "1.0.0",
+  "description": "Treedots V3 Backend",
+  "repository": "https://github.com/treedots-enterprise/treedots.git",
+  "author": "Dev <dev@thetreedots.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev --no-notify --respawn --transpile-only src/index.ts",
+    "start": "node dist/index",
+    "clean": "rm -rf dist",
+    "build": "yarn -s run clean && yarn -s run generate && tsc",
+    "lint": "",
+    "tsc": "tsc",
+    "generate": "yarn -s run generate:nexus",
+    "generate:nexus": "ts-node --transpile-only src/schema",
+    "postinstall": "yarn -s run generate",
+    "test": "cd ../../packages/prisma && yarn -s run generate && cd - && yarn -s run generate && ./test.sh",
+    "coverage": "jest --coverage"
+  },
+  "dependencies": {
+    "@treedots/prisma": "1.0.0",
+    "@treedots/tookan": "1.0.0",
+    "apollo-server-express": "^2.24.0",
+    "axios": "^0.21.1",
+    "bcryptjs": "^2.4.3",
+    "bluebird": "^3.7.2",
+    "dayjs": "^1.10.4",
+    "dotenv": "^8.2.0",
+    "graphql": "^15.5.0",
+    "graphql-middleware": "^6.0.4",
+    "graphql-scalars": "^1.7.1",
+    "graphql-shield": "^7.5.0",
+    "graphql-sqs-subscriptions": "^0.0.5",
+    "graphql-subscriptions": "^1.1.0",
+    "graphql-upload": "^11.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.20",
+    "nexus": "^1.0.0",
+    "nexus-plugin-prisma": "0.34.1",
+    "uuid": "^8.3.2",
+    "winston": "^3.3.3",
+    "aws4-axios": "~2.4.3",
+    "point-in-polygon": "^1.1.0",
+    "@pulumi/aws": "^4.0.0",
+    "@pulumi/awsx": "^0.30.0",
+    "handlebars": "~4.7.7",
+    "puppeteer": "10.1.0",
+    "adm-zip": "~0.5.9"
+  },
+  "devDependencies": {
+    "@types/graphql-iso-date": "^3.4.0",
+    "@types/jest": "~26.0.22",
+    "@typescript-eslint/eslint-plugin": "^3.6.1",
+    "@typescript-eslint/parser": "^3.6.1",
+    "eslint": "~7.22.0",
+    "eslint-config-prettier": "~8.1.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "~3.3.1",
+    "get-port": "^5.1.1",
+    "graphql-request": "^3.4.0",
+    "jest": "^26.6.3",
+    "jest-junit": "~12.0.0",
+    "jest-mock-extended": "^1.0.13",
+    "prettier": "^2.0.5",
+    "supertest": "^6.1.3",
+    "ts-jest": "^26.5.2",
+    "ts-node-dev": "^1.1.1",
+    "typescript": "^4.1.5"
+  },
+  "jest": {
+    "modulePathIgnorePatterns": [
+      "__helper",
+      "__testData"
+    ],
+    "preset": "ts-jest",
+    "globals": {
+      "ts-jest": {
+        "diagnostics": {
+          "warnOnly": true
+        },
+        "testTimeout": 50000,
+        "isolatedModules": true
+      }
+    },
+    "testEnvironment": "node",
+    "testTimeout": 10000
+  }
+}

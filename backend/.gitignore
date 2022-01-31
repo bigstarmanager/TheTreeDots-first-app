@@ -1,0 +1,17 @@
+node_modules/
+dist/
+coverage/
+yarn-error.log
+package-lock.json
+yarn.lock
+.DS_Store
+.env
+__tests__/__snapshots__
+schema.graphql
+dotenv/prod.env
+dotenv/.env
+prisma/.env
+src/generated
+
+logs/
+*.log

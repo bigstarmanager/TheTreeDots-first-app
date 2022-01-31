@@ -1,0 +1,134 @@
+@import 'tag';
+@import 'color';
+@import 'table';
+@import 'input';
+
+.table-custom {
+  table.ant-table-fixed {
+    thead.ant-table-thead {
+      tr:first-child {
+        th:first-child {
+          padding: 9px 8px;
+        }
+      }
+    }
+  }
+
+  .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #04565a;
+    border-color: #04565a;
+  }
+
+  .ant-checkbox-indeterminate .ant-checkbox-inner::after {
+    background-color: #04565a;
+  }
+
+  table {
+    thead {
+      tr {
+        th {
+          background: rgba(4, 86, 90, 0.1) !important;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 20px;
+          color: #000000;
+          //min-width: 150px !important;
+          white-space: nowrap;
+          //border: 1px solid #E6E9F2;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          div {
+            vertical-align: middle;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            color: #2d2d2d;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.tagInvoices {
+  background-color: #04565a;
+  color: white !important;
+  border-radius: 20px;
+  width: fit-content;
+  padding: 0 10px;
+
+  span {
+    margin-right: 11px;
+  }
+}
+
+.assign-text-total {
+  color: #000000;
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 23px;
+  margin-top: 10px;
+  margin-right: 15px;
+}
+
+.custom-checkbox {
+  .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #04565a;
+    border-color: #04565a;
+  }
+
+  span:nth-child(2) {
+    white-space: nowrap;
+  }
+}
+
+.table-no-border {
+  .ant-table-tbody > tr > td {
+    border-bottom: none;
+    padding: 5px 0 !important;
+  }
+}
+
+.table-job-un-assigned {
+  .ant-table-tbody > tr > td {
+    border-bottom: none;
+    //text-align: center !important;
+  }
+
+  .ant-table-thead > tr > th {
+    text-align: center !important;
+  }
+
+  .ant-table-tbody > tr.ant-table-row-hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td {
+    background: none !important;
+
+    .box-h80 {
+      background: rgba(4, 86, 90, 0.1);
+    }
+  }
+}
+
+//
+.btn-pointer {
+  cursor: pointer;
+}
+
+.box-filter-search {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.spinner-loading {
+  padding: 5rem 0;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+}

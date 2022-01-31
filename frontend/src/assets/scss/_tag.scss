@@ -1,0 +1,33 @@
+.notStarted {
+  background: rgba(188, 0, 0, 0.1);
+  border-radius: 20px;
+  width: 112px;
+  text-align: center;
+  span {
+    color: #bc0000;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+.inProgress {
+  background: rgba(0, 102, 255, 0.1);
+  border-radius: 20px;
+  width: 112px;
+  text-align: center;
+  span {
+    color: #0066ff;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+.completed {
+  background: rgba(4, 86, 90, 0.1);
+  border-radius: 20px;
+  width: 112px;
+  text-align: center;
+  span {
+    color: #04565a;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

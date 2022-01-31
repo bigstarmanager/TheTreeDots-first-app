@@ -1,0 +1,177 @@
+```
+<template>
+  <div class="google_maps mb-5 mb-md-10">
+    <div id="map" style="width: 100%; height: 100%;" />
+  </div>
+</template>
+
+<script>
+// import { map as mapLodash } from 'lodash'
+import marker from '~/assets/img/evaluator-list/map-marker.svg'
+
+export default {
+  name: 'Map',
+  props: {
+    listAddress: {
+      type: Array,
+      default: () => []
+    }
+  },
+  data () {
+    return {
+      iconMarker: marker,
+      locations: []
+    }
+  },
+  watch: {
+    listAddress (val) {
+      if (val) {
+        this.initGGMap()
+      }
+    }
+  },
+  created () {
+    // this.getLocation()
+  },
+  async mounted () {
+    try {
+      await this.initGGMap()
+    } catch (error) {
+      console.error(error)
+    }
+  },
+  methods: {
+    async initGGMap () {
+      try {
+        const google = await this.$google()
+        const map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 8
+        })
+        // const arr = mapLodash(this.listAddress, x => x.address)
+        //
+        this.listAddress.forEach(({ address, lat, lng, name }, i) => {
+          if (i === 0) {
+            map.setCenter({ lat, lng })
+          }
+
+          // maker + info
+          const marker = new google.maps.Marker({
+            position: { lat, lng },
+            map,
+            animation: google.maps.Animation.DROP,
+            title: 'Address'
+          })
+
+          const infowindow = new google.maps.InfoWindow({
+            content: `<div style="color: #000000;"> ${name} </div>`
+          })
+          marker.addListener('click', () => {
+            infowindow.open({
+              anchor: marker,
+              map,
+              shouldFocus: false
+            })
+          })
+        })
+      } catch (error) {
+        console.error(error)
+      }
+    }
+  }
+}
+</script>
+
+<style scoped lang="scss">
+.google_maps{
+    position: relative;
+    width: 100%;
+    height:546px;
+    border-radius: 20px;
+    overflow: hidden;
+    @media(max-width: 480px){
+        height:285px;
+    }
+}
+</style>
+<template>
+  <div class="google_maps mb-5 mb-md-10">
+    <div id="map" style="width: 100%; height: 100%;" />
+  </div>
+</template>
+
+<script>
+// import { map as mapLodash } from 'lodash'
+import marker from '~/assets/img/evaluator-list/map-marker.svg'
+
+export default {
+  name: 'Map',
+  props: {
+    listAddress: {
+      type: Array,
+      default: () => []
+    }
+  },
+  data () {
+    return {
+      iconMarker: marker,
+      locations: []
+    }
+  },
+  watch: {
+    listAddress (val) {
+      if (val) {
+        this.initGGMap()
+      }
+    }
+  },
+  created () {
+    // this.getLocation()
+  },
+  async mounted () {
+    try {
+      await this.initGGMap()
+    } catch (error) {
+      console.error(error)
+    }
+  },
+  methods: {
+    async initGGMap () {
+      try {
+        const google = await this.$google()
+        const map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 8
+        })
+        // const arr = mapLodash(this.listAddress, x => x.address)
+        //
+        this.listAddress.forEach(({ address, lat, lng, name }, i) => {
+          if (i === 0) {
+            map.setCenter({ lat, lng })
+          }
+
+          // maker + info
+          const marker = new google.maps.Marker({
+            position: { lat, lng },
+            map,
+            animation: google.maps.Animation.DROP,
+            title: 'Address'
+          })
+
+          const infowindow = new google.maps.InfoWindow({
+            content: `<div style="color: #000000;"> ${name} </div>`
+          })
+          marker.addListener('click', () => {
+            infowindow.open({
+              anchor: marker,
+              map,
+              shouldFocus: false
+            })
+          })
+        })
+      } catch (error) {
+        console.error(error)
+      }
+    }
+  }
+}
+</script>
+```

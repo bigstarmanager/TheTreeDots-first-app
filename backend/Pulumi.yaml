@@ -1,0 +1,28 @@
+name: 3pl-graphql
+runtime: nodejs
+description: Treedots V3 Backend
+main: pulumi/
+template:
+  config:
+    aws:region:
+      description: The AWS region to deploy into.
+      default: ap-southeast-1
+    coreStack:
+      description:
+        (Required) The reference to the core stack so that the Application Instance can get the correct credentials
+        and database information for application startup
+      default: treedots/core/dev
+    certificateArn:
+      description: (Required) The certificate ARN for the endpoint
+    serviceDesiredCount:
+      description: Desired fargate service count
+      default: 1
+    serviceAssignPublicIp:
+      description: To assign public IP to service
+      default: true
+    serviceCpu:
+      description: CPU set for service
+      default: 256
+    serviceMemory:
+      description: Memory set for service
+      default: 512
